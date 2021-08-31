@@ -1,26 +1,37 @@
-# svelte-typescript-component-template
+# Svelte-Boring-Avatars
 
-A base for building shareable Svelte components written in Typescript.
+A Svelte port of [Boring Avatars](https://github.com/boringdesigners/boring-avatars).
 
-This is based on [sveltejs/component-template](https://github.com/sveltejs/component-template) and allows consumers to import the .svelte components without requiring Typescript (see ["Consuming Components"](#consuming-components) below).
+## Installation
 
 ```bash
-npx degit mattjennings/svelte-typescript-component-template#main my-component
-cd my-component
-npm install # or yarn
+npm install vue-boring-avatars
+
+# or
+
+yarn add vue-boring-avatars
 ```
 
-Your component's source code lives in `src/Component.svelte`.
+## Usage
 
-You can create a package that exports multiple components by adding them to the `src` directory and editing `src/index.ts` to reexport them as named exports.
+```svelte
+<script lang="ts">
+  import Avatar from 'svelte-boring-avatars';
+</script>
 
-## Setting Up
+<Avatar
+  size={40}
+  name="Maria Mitchell"
+  variant="marble"
+  colors={['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90']}
+/>
+```
 
-- Run `npm init` (or `yarn init`)
-- Replace this README with your own
+## Props
 
-## Consuming Components
-
-Your package.json has a `"svelte"` field pointing to `src/index.js`, which allows Svelte apps to import the source code directly, if they are using a bundler plugin like [rollup-plugin-svelte](https://github.com/sveltejs/rollup-plugin-svelte) or [svelte-loader](https://github.com/sveltejs/svelte-loader) (where [`resolve.mainFields`](https://webpack.js.org/configuration/resolve/#resolve-mainfields) in your webpack config includes `"svelte"`). **This is recommended.**
-
-For everyone else, `npm run build` will bundle your component's source code into a plain JavaScript module (`dist/index.mjs`) and a UMD script (`dist/index.js`). This will happen automatically when you publish your component to npm, courtesy of the `prepublishOnly` hook in package.json.
+| Prop    | Type                                                     | Default                                                   |
+| ------- | -------------------------------------------------------- | --------------------------------------------------------- |
+| size    | number                                                   | 40                                                        |
+| square  | boolean                                                  | false                                                     |
+| variant | `"bauhaus", "beam", "marble", "pixel", "ring", "sunset"` | `"marble"`                                                |
+| colors  | string[]                                                 | `["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]` |
