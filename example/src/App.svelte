@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Avatar } from 'svelte-boring-avatars';
+  import Avatar from 'svelte-boring-avatars';
 
   export let name = 'John Doe';
   export let size = 100;

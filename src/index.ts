@@ -1,1 +1,2 @@
-export { default as Avatar } from './lib/components/Avatar.svelte';
+import Avatar from './lib/components/Avatar.svelte';
+export default Avatar;
