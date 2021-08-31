@@ -4,7 +4,7 @@
   "module": "dist/index.mjs",
   "main": "dist/index.umd.js",
   "types": "dist/ts/index.d.ts",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "rollup -c",
