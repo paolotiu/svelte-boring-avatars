@@ -9,8 +9,7 @@
     "prebuild": "rm -rf ./dist",
     "build": "rollup -c",
     "dev": "rollup -c -w",
-    "validate": "svelte-check",
-    "prepublishOnly": "npm run build"
+    "validate": "svelte-check"
   },
   "files": [
     "src",

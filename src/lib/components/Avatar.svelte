@@ -17,6 +17,8 @@
   export let square = false;
   export let size = 40;
 
+  let props = { colors, name, square, size };
+
   let finalVariant: Variants[number] = 'bauhaus';
 
   const avatars = {
@@ -28,22 +30,28 @@
     sunset: AvatarSunset,
   };
 
-  const checkedVariant = () => {
-    if (Object.keys(deprecatedVariants).includes(variant)) {
-      finalVariant = deprecatedVariants[variant as DeprecatedVariantsKeys];
+  const checkedVariant = (_variant: Variants[number]) => {
+    if (Object.keys(deprecatedVariants).includes(_variant)) {
+      finalVariant = deprecatedVariants[_variant as DeprecatedVariantsKeys];
       return;
     }
 
-    if (variants.includes(variant)) {
-      finalVariant = variant;
+    if (variants.includes(_variant)) {
+      finalVariant = _variant;
       return;
     }
 
     finalVariant = 'marble';
   };
 
-  const props = { variant, colors, name, square, size };
-  checkedVariant();
+  // Reacts to prop changes creating a new object
+  // Thus, rerendering the Child beacuse of the key-block
+  $: props = { colors, name, square, size };
+  $: checkedVariant(variant);
 </script>
 
-<svelte:component this={avatars[finalVariant]} {...props} />
+{#key props}
+  {#key finalVariant}
+    <svelte:component this={avatars[finalVariant]} {...props} />
+  {/key}
+{/key}
