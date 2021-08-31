@@ -9,11 +9,11 @@ A Svelte port of [Boring Avatars](https://github.com/boringdesigners/boring-avat
 ## Installation
 
 ```bash
-npm install vue-boring-avatars
+npm install svelte-boring-avatars
 
 # or
 
-yarn add vue-boring-avatars
+yarn add svelte-boring-avatars
 ```
 
 ## Usage
