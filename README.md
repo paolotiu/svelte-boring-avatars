@@ -2,6 +2,10 @@
 
 A Svelte port of [Boring Avatars](https://github.com/boringdesigners/boring-avatars).
 
+## Demo
+
+[REPL](https://svelte.dev/repl/889946205a7542a4a6e0e1e7e98f37ba?version=3.42.4)
+
 ## Installation
 
 ```bash
