@@ -39,6 +39,7 @@
   xmlns="http://www.w3.org/2000/svg"
   width={size}
   height={size}
+  data-testid="avatar-ring"
 >
   <mask id="mask__ring" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />

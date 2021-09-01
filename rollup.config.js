@@ -3,7 +3,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import sveltePreprocess from 'svelte-preprocess';
 import typescript from '@rollup/plugin-typescript';
 import execute from 'rollup-plugin-execute';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 import pkg from './package.json';
 
@@ -37,6 +36,5 @@ export default {
     }),
     resolve(),
     typescript(),
-    sizeSnapshot(),
   ],
 };
