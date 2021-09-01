@@ -39,3 +39,21 @@ yarn add vue-boring-avatars
 | square  | boolean                                                  | false                                                     |
 | variant | `"bauhaus", "beam", "marble", "pixel", "ring", "sunset"` | `"marble"`                                                |
 | colors  | string[]                                                 | `["#92A1C6", "#146A7C", "#F0AB3D", "#C271B4", "#C20D90"]` |
+
+## Reducing Bundle Size
+
+This library is small as it is, but if you want to shave off some more load you can import a specific variant.
+
+All the props stay the same except for the exclusion of `variant`.
+
+```svelte
+<script>
+  import { AvatarBeam } from 'svelte-boring-avatars';
+</script>
+
+<AvatarBeam
+  size={40}
+  name="Maria Mitchell"
+  colors={['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90']}
+/>
+```

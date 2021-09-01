@@ -1,5 +1,6 @@
 <script lang="ts">
   import { getNumber, getUnit, getRandomColor, getBoolean } from '../utils';
+  import { DEFAULTS } from './CONSTANTS';
 
   const ELEMENTS = 4;
   const SIZE = 80;
@@ -18,10 +19,10 @@
     return elementsProperties;
   }
 
-  export let size: number;
-  export let name: string;
-  export let square: boolean;
-  export let colors: string[];
+  export let size = DEFAULTS.size;
+  export let name = DEFAULTS.name;
+  export let square = DEFAULTS.square;
+  export let colors = DEFAULTS.colors;
 
   const properties = generateColors(name, colors);
 </script>

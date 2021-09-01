@@ -5,6 +5,7 @@
   import AvatarPixel from './AvatarPixel.svelte';
   import AvatarRing from './AvatarRing.svelte';
   import AvatarSunset from './AvatarSunset.svelte';
+  import { DEFAULTS } from './CONSTANTS';
   const variants = ['pixel', 'bauhaus', 'ring', 'beam', 'sunset', 'marble'] as const;
   const deprecatedVariants = { geometric: 'beam', abstract: 'bauhaus' } as const;
 
@@ -12,10 +13,10 @@
   type Variants = typeof variants;
 
   export let variant: Variants[number] = 'marble';
-  export let colors = ['#92A1C6', '#146A7C', '#F0AB3D', '#C271B4', '#C20D90'];
-  export let name = 'Clara Barton';
-  export let square = false;
-  export let size = 40;
+  export let colors = DEFAULTS.colors;
+  export let name = DEFAULTS.name;
+  export let square = DEFAULTS.square;
+  export let size = DEFAULTS.size;
 
   let props = { colors, name, square, size };
 
