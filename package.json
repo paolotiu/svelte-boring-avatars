@@ -6,7 +6,8 @@
   "types": "dist/ts/index.d.ts",
   "author": "Paolo Tiu <paolotiu17@gmail.com>",
   "license": "MIT",
-  "version": "1.1.1",
+  "version": "1.2.2",
+  "sideEffects": false,
   "scripts": {
     "prebuild": "rm -rf ./dist",
     "build": "rollup -c",
