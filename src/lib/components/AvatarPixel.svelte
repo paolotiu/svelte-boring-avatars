@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getNumber, getRandomColor } from '../utils';
+  import { getNumber, getRandomColor, getRandomId } from '../utils';
   import { DEFAULTS } from './CONSTANTS';
 
   const ELEMENTS = 64;
@@ -22,6 +22,8 @@
   export let colors = DEFAULTS.colors;
 
   const properties = generateColors(name, colors);
+
+  const maskId = `mask0${getRandomId()}`;
 </script>
 
 <svg
@@ -33,7 +35,7 @@
   data-testid="avatar-pixel"
 >
   <mask
-    id="mask0"
+    id={maskId}
     mask-type="alpha"
     maskUnits="userSpaceOnUse"
     x={0}

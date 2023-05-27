@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getBoolean, getContrast, getNumber, getRandomColor, getUnit } from '../utils';
+  import { getBoolean, getContrast, getNumber, getRandomColor, getUnit, getRandomId } from '../utils';
   import { DEFAULTS } from './CONSTANTS';
 
   const SIZE = 36;
@@ -41,6 +41,8 @@
   export let colors = DEFAULTS.colors;
 
   const data = generateData(name, colors);
+
+  const maskId = `mask__beam${getRandomId()}`;
 </script>
 
 <svg
@@ -51,7 +53,7 @@
   height={size}
   data-testid="avatar-beam"
 >
-  <mask id="mask__beam" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+  <mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
   <g mask="url(#mask__beam)">
