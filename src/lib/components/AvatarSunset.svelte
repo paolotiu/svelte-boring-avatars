@@ -41,8 +41,8 @@
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
   <g mask="url(#{maskId})">
-    <path fill={'url(#{gradient0Id})'} d="M0 0h80v40H0z" />
-    <path fill={'url(#{gradient1Id})'} d="M0 40h80v40H0z" />
+    <path fill="url(#{gradient0Id})" d="M0 0h80v40H0z" />
+    <path fill="url(#{gradient1Id})" d="M0 40h80v40H0z" />
   </g>
   <defs>
     <linearGradient

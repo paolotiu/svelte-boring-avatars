@@ -56,7 +56,7 @@
   <mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
-  <g mask="url(#mask__beam)">
+  <g mask="url(#{maskId})">
     <rect width={SIZE} height={SIZE} fill={data.backgroundColor} />
     <rect
       x="0"
