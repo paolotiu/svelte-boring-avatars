@@ -6,7 +6,7 @@
   "types": "dist/ts/index.d.ts",
   "author": "Paolo Tiu <paolotiu17@gmail.com>",
   "license": "MIT",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "sideEffects": false,
   "scripts": {
     "prebuild": "rm -rf ./dist",
