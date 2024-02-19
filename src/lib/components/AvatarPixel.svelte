@@ -36,7 +36,7 @@
 >
   <mask
     id={maskId}
-    mask-type="alpha"
+    style:mask-type="alpha"
     maskUnits="userSpaceOnUse"
     x={0}
     y={0}
