@@ -10,14 +10,7 @@
   "module": "dist/index.mjs",
   "main": "dist/index.umd.js",
   "types": "dist/ts/index.d.ts",
-  "contributors": [
-    {"name": "Paolo Tiu",
-      "email": "paolotiu17@gmail.com"
-    },
-    {"name": "Justus Perlwitz",
-      "email": "hello@justus.pw"
-    }
-  ],
+  "author": "Paolo Tiu <paolotiu17@gmail.com>",
   "license": "MIT",
   "version": "1.2.5",
   "sideEffects": false,
@@ -29,10 +22,7 @@
     "prepublishOnly": "npm run build",
     "test": "jest tests"
   },
-  "files": [
-    "src",
-    "dist"
-  ],
+  "files": ["src", "dist"],
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@rollup/plugin-typescript": "^8.5.0",
@@ -62,11 +52,7 @@
     "tslib": "^2.5.2",
     "typescript": "^4.9.5"
   },
-  "keywords": [
-    "svelte",
-    "avatars",
-    "boring-avatars"
-  ],
+  "keywords": ["svelte", "avatars", "boring-avatars"],
   "repository": {
     "type": "git",
     "url": "https://github.com/paolotiu/svelte-boring-avatars.git"
@@ -81,13 +67,7 @@
       ],
       "^.+\\.ts$": "ts-jest"
     },
-    "moduleFileExtensions": [
-      "js",
-      "svelte",
-      "ts"
-    ]
+    "moduleFileExtensions": ["js", "svelte", "ts"]
   },
-  "setupFilesAfterEnv": [
-    "@testing-library/jest-dom/extend-expect"
-  ]
+  "setupFilesAfterEnv": ["@testing-library/jest-dom/extend-expect"]
 }
