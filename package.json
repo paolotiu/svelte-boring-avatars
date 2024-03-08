@@ -3,13 +3,21 @@
   "svelte": "dist/index.js",
   "exports": {
     ".": {
-      "svelte": "./dist/index.js"
+      "svelte": "./dist/index.js",
+      "types": "./dist/ts/index.d.ts"
     }
   },
   "module": "dist/index.mjs",
   "main": "dist/index.umd.js",
   "types": "dist/ts/index.d.ts",
-  "author": "Paolo Tiu <paolotiu17@gmail.com>",
+  "contributors": [
+    {"name": "Paolo Tiu",
+      "email": "paolotiu17@gmail.com"
+    },
+    {"name": "Justus Perlwitz",
+      "email": "hello@justus.pw"
+    }
+  ],
   "license": "MIT",
   "version": "1.2.5",
   "sideEffects": false,
