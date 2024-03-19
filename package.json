@@ -3,7 +3,8 @@
   "svelte": "dist/index.js",
   "exports": {
     ".": {
-      "svelte": "./dist/index.js"
+      "svelte": "./dist/index.js",
+      "types": "./dist/ts/index.d.ts"
     }
   },
   "module": "dist/index.mjs",
