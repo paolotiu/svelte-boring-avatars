@@ -54,3 +54,8 @@ export const getContrast = (hexcolor: string) => {
   // Check contrast
   return yiq >= 128 ? 'black' : 'white';
 };
+
+export const getRandId = (prefix?: string) => {
+  // doesn't use substr
+  return (prefix || '') + Math.random().toString(36).substring(2);
+};

@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getNumber, getRandomColor } from '../utils';
+  import { getNumber, getRandId, getRandomColor } from '../utils';
   import { DEFAULTS } from './CONSTANTS';
 
   const SIZE = 90;
@@ -31,6 +31,8 @@
   export let colors = DEFAULTS.colors;
 
   const cellColors = generateColors(colors, name);
+
+  const maskId = getRandId('mask__ring');
 </script>
 
 <svg
@@ -41,10 +43,10 @@
   height={size}
   data-testid="avatar-ring"
 >
-  <mask id="mask__ring" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+  <mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
-  <g mask="url(#mask__ring)">
+  <g mask="url(#{maskId})">
     <path d="M0 0h90v45H0z" fill={cellColors[0]} />
     <path d="M0 45h90v45H0z" fill={cellColors[1]} />
     <path d="M83 45a38 38 0 00-76 0h76z" fill={cellColors[2]} />

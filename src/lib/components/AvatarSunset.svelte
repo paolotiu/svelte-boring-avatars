@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getNumber, getRandomColor } from '../utils';
+  import { getNumber, getRandId, getRandomColor } from '../utils';
   import { DEFAULTS } from './CONSTANTS';
 
   const ELEMENTS = 4;
@@ -23,6 +23,10 @@
 
   const properties = generateColors(name, colors);
   const _name = name.replace(/\s/g, '');
+
+  const maskId = getRandId('mask__sunset');
+  const gradient0Id = getRandId('gradient_paint0_linear_' + _name);
+  const gradient1Id = getRandId('gradient_paint1_linear_' + _name);
 </script>
 
 <svg
@@ -33,16 +37,16 @@
   height={size}
   data-testid="avatar-sunset"
 >
-  <mask id="mask__sunset" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+  <mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
-  <g mask="url(#mask__sunset)">
+  <g mask="url(#{maskId})">
     <path fill={'url(#gradient_paint0_linear_' + _name + ')'} d="M0 0h80v40H0z" />
     <path fill={'url(#gradient_paint1_linear_' + _name + ')'} d="M0 40h80v40H0z" />
   </g>
   <defs>
     <linearGradient
-      id={'gradient_paint0_linear_' + _name}
+      id={gradient0Id}
       x1={SIZE / 2}
       y1={0}
       x2={SIZE / 2}
@@ -53,7 +57,7 @@
       <stop offset={1} stop-color={properties[1].color} />
     </linearGradient>
     <linearGradient
-      id={'gradient_paint1_linear_' + _name}
+      id={gradient1Id}
       x1={SIZE / 2}
       y1={SIZE / 2}
       x2={SIZE / 2}

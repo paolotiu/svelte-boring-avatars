@@ -25,6 +25,8 @@
   export let colors = DEFAULTS.colors;
 
   const properties = generateColors(name, colors);
+
+  const maskId = 'mask__bauhaus';
 </script>
 
 <svg
@@ -35,10 +37,10 @@
   height={size}
   data-testid="avatar-bauhaus"
 >
-  <mask id="mask__bauhaus" maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
+  <mask id={maskId} maskUnits="userSpaceOnUse" x={0} y={0} width={SIZE} height={SIZE}>
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
-  <g mask="url(#mask__bauhaus)">
+  <g mask="url(#{maskId})">
     <rect width={SIZE} height={SIZE} fill={properties[0].color} />
     <rect
       x={(SIZE - 60) / 2}

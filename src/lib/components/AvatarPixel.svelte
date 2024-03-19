@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { getNumber, getRandomColor } from '../utils';
+  import { getNumber, getRandId, getRandomColor } from '../utils';
   import { DEFAULTS } from './CONSTANTS';
 
   const ELEMENTS = 64;
@@ -22,6 +22,8 @@
   export let colors = DEFAULTS.colors;
 
   const properties = generateColors(name, colors);
+
+  const maskId = getRandId('mask__pixel');
 </script>
 
 <svg
@@ -33,13 +35,8 @@
   data-testid="avatar-pixel"
 >
   <mask
-<<<<<<< HEAD
-    id="mask0"
-    mask-type="alpha"
-=======
     id={maskId}
     style:mask-type="alpha"
->>>>>>> 5444343 (Fix mask type attribute)
     maskUnits="userSpaceOnUse"
     x={0}
     y={0}
@@ -48,7 +45,7 @@
   >
     <rect width={SIZE} height={SIZE} rx={square ? undefined : SIZE * 2} fill="white" />
   </mask>
-  <g mask="url(#mask0)">
+  <g mask="url(#{maskId})">
     <rect width={10} height={10} fill={properties[0].color} />
     <rect x={20} width={10} height={10} fill={properties[1].color} />
     <rect x={40} width={10} height={10} fill={properties[2].color} />
