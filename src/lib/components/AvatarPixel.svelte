@@ -33,8 +33,13 @@
   data-testid="avatar-pixel"
 >
   <mask
+<<<<<<< HEAD
     id="mask0"
     mask-type="alpha"
+=======
+    id={maskId}
+    style:mask-type="alpha"
+>>>>>>> 5444343 (Fix mask type attribute)
     maskUnits="userSpaceOnUse"
     x={0}
     y={0}
